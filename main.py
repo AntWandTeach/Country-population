@@ -1,4 +1,4 @@
-import sys
+import sys, Config
 
 if __name__ == '__main__':
-    pass
+    print(Config.num_of_categories)
