@@ -1,4 +1,4 @@
-import sys, Config, random
+import Config, random
 
 if __name__ == '__main__':
     print(Config.num_of_categories)
