@@ -16,4 +16,3 @@ for j in range(len(paths)):
     for dirs, folder, files in os.walk(paths[j]):
         for i in files:
             path_id[j][i[:i.index('.')]] = (paths[j] + '/' + i)
-print(path_id)
