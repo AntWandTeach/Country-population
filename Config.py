@@ -1,4 +1,4 @@
-import os
+import os as c
 
 num_of_categories = 100
 depth_ = 5
