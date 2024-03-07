@@ -18,7 +18,7 @@ def plot_grap(file, predicted_values=None):
     plt.xlabel('Timestamp')
     plt.ylabel('Values')
     plt.show()
-
+    # plt.title
 
 
 file_path = 'datasets/new.csv'
