@@ -1,8 +1,12 @@
+import csv
+
+import numpy
 from tensorflow import keras
 from tensorflow.keras.layers import Input, Dense, LSTM, Dropout
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.utils import to_categorical
 from Config import *
+from pandas import *
 
 def init_Model(depth, categories):
     model = Sequential()
@@ -21,9 +25,15 @@ def trainingAndSave(model, x_train, y_train, model_name = '0'):
 
 def load_Model(model_name= '0'):
     return keras.models.load_model(directories['models']+'model_'+model_name)
-def Predict(model, x_test):
-    return model.predict(x_test)
+def predict_results(model, x_test, predict_name = '0'):
+    prediction = model.predict(x_test)
+    with open(directories['predictions'] + 'pre_' + predict_name + '.csv', mode= 'w') as file:
+        file_wr = csv.writer(file, delimiter=",", lineterminator="\r")
+        for i in range(end_year - begin_year + 1):
+            file_wr.writerow([x_test[i], numpy.argmax(prediction[i, :])])
 
 # def Predict_format()
-
+if __name__ == '__main__':
+    model = init_Model(depth_, num_of_categories)
+    print(model.summary())
 
