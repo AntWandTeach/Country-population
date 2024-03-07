@@ -21,5 +21,9 @@ def trainingAndSave(model, x_train, y_train, model_name = '0'):
 
 def load_Model(model_name= '0'):
     return keras.models.load_model(directories['models']+'model_'+model_name)
+def Predict(model, x_test):
+    return model.predict(x_test)
+
+# def Predict_format()
 
 
