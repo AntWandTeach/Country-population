@@ -13,8 +13,8 @@ def init_Model(depth, categories):
     model.compile(loss= 'categorical_crossentropy', metrics= ['accuracy', 'mse'])
     return model
 
-def trainingAndSave(model, x_train, y_train, model_num):
-    model.fit(x_train, y_train, epochs= 10)
-    model.save('models')
+# def trainingAndSave(model, x_train, y_train, model_num):
+#     model.fit(x_train, y_train, epochs= 10)
+#     model.save('models')
 
 
