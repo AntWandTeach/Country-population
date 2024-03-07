@@ -19,6 +19,7 @@ def plot_grap(file, predicted_values=None):
     plt.ylabel('Values')
     plt.show()
     # plt.title
+    # return
 
 
 file_path = 'datasets/new.csv'
