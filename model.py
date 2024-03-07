@@ -16,7 +16,14 @@ def init_Model(depth, categories):
 
 def trainingAndSave(model, x_train, y_train, model_name = '0'):
     model.fit(x_train, y_train, epochs= nums_epochs, validation_split = valid)
-    filename = 'models/model_' + model_name
+    filename = directories['models'] + 'model_' + model_name
     model.save(filename)
+
+def load_Model(model_name= '0'):
+    return keras.models.load_model(directories['models']+'model_'+model_name)
+def Predict(model, x_test):
+    return model.predict(x_test)
+
+# def Predict_format()
 
 
